@@ -29,7 +29,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.dialog.MaterialDialogs;
 import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.shape.MaterialShapeDrawable;
-import com.jesse205.androlua.androidX.material3.R;
+import com.zade.androluaz.R;
 
 /**
  * Lua 质感对话框
