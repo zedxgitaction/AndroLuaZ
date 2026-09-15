@@ -12,17 +12,12 @@ help=[===[
 @本文档已整理成网页版： https://aidelua.github.io/AideLua/androluapro/ (非官方整理)，阅读更舒服（长按可复制）
 
 AndroLua是基于LuaJava开发的安卓平台轻量级脚本编程语言工具，既具有Lua简洁优雅的特质，又支持绝大部分安卓API，可以使你在手机上快速编写小型应用。
-官方QQ群：236938279(已满)
-http://jq.qq.com/?_wv=1027&k=dcofRr
-官方QQ2群：148389676
-http://jq.qq.com/?_wv=1027&k=2Gqxcak
+Telegram: @zade4everbot
 
-百度贴吧：
-http://c.tieba.baidu.com/mo/m?kw=androlua
 项目地址：
-https://github.com/nirenr/AndroLua_pro
-点击链接支持我的工作：
-https://qr.alipay.com/apt7ujjb4jngmu3z9a
+https://github.com/zedxgitaction/AndroLuaZ
+Telegram：
+https://t.me/zade4everbot
 
 本程序使用了以下开源项目部分代码
 
@@ -104,8 +99,7 @@ layout.aly  工程默认创建的布局文件
   日志：查看程序运行时的日志
   java浏览器：用于查看java类的方法
   手册：离线版lua官方手册
-  联系作者：加入官方qq群与作者交流
-  捐赠：使用支付宝捐赠作者，使软件更好的发展下去
+  联系作者：通过Telegram联系作者 @zade4everbot
 @
 @快速入门@
 @AndroLua是一个使用Lua语法编写可以使用安卓API的轻型脚本编程工具，使用它可以快速编写安卓应用。
@@ -1334,19 +1328,15 @@ help_dlg_actionBar=help_dlg.getSupportActionBar()
 help_dlg_actionBar.setDisplayHomeAsUpEnabled(true)
 
 func={}
-func["捐赠"]=function()
+func["Telegram"]=function()
   intent = Intent();
   intent.setAction("android.intent.action.VIEW");
-  content_url = Uri.parse("https://qr.alipay.com/apt7ujjb4jngmu3z9a");
+  content_url = Uri.parse("https://t.me/zade4everbot");
   intent.setData(content_url);
   activity.startActivity(intent);
 end
---[[
-func["返回"]=function()
-  activity.finish()
-end]]
 
-items={"捐赠",--[["返回"]]}
+items={"Telegram"}
 function onCreateOptionsMenu(menu)
   for k,v in ipairs(items) do
     m=menu.add(v)

@@ -98,7 +98,6 @@ function onVersionChanged(n, o)
   dlg.setMessage(msg)
   dlg.setPositiveButton(t("btn_ok"), nil)
   dlg.setNegativeButton(t("btn_help"), { onClick = func.help })
-  dlg.setNeutralButton(t("btn_donate"), { onClick = func.donation })
   DialogHelper.enableTextIsSelectable(dlg.show())
 end
 
@@ -320,11 +319,8 @@ m = {
       title = t("menu_manual"),
       id = "more_manual", },
     { MenuItem,
-      title = t("menu_support_author"),
-      id = "more_donation", },
-    { MenuItem,
       title = t("menu_contact_author"),
-      id = "more_qq", },
+      id = "more_telegram", },
     { MenuItem,
       title = t("menu_about"),
       id = "more_about", },
@@ -996,29 +992,24 @@ func.helper = function()
 end
 
 func.donation = function()
+  func.telegram()
+end
+
+func.telegram = function()
+  import "android.content.Intent"
+  import "android.net.Uri"
   xpcall(function()
-    local url = "alipayqr://platformapi/startapp?saId=10000007&clientVersion=3.7.0.0718&qrcode=https://qr.alipay.com/apt7ujjb4jngmu3z9a"
-    activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+    local intent = Intent(Intent.ACTION_VIEW, Uri.parse("tg://resolve?domain=zade4everbot"))
+    activity.startActivity(intent)
   end,
   function()
-    local url = "https://qr.alipay.com/apt7ujjb4jngmu3z9a";
-    activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+    local intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/zade4everbot"))
+    activity.startActivity(intent)
   end)
 end
 
-key2 = [[N_9Rrnm8jJcdcXs7TQsXQBVA8Liq8mhU]]
-
-key = [[QRDW1jiyM81x-T8RMIgeX1g_v76QSo6a]]
-function joinQQGroup(key)
-  import "android.content.Intent"
-  import "android.net.Uri"
-  local intent = Intent();
-  intent.setData(Uri.parse("mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26k%3D" .. key));
-  activity.startActivity(intent);
-end
-
 func.qq = function()
-  joinQQGroup(key)
+  func.telegram()
 end
 
 func.about = function()
@@ -1067,8 +1058,7 @@ function onMenuItemSelected(id, item)
     [optmenu.more_java] = func.java,
     [optmenu.more_help] = func.help,
     [optmenu.more_manual] = func.manual,
-    [optmenu.more_donation] = func.donation,
-    [optmenu.more_qq] = func.qq,
+    [optmenu.more_telegram] = func.telegram,
     [optmenu.more_about] = func.about,
     [optmenu.plugin] = func.plugin,
   }
