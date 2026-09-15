@@ -290,7 +290,7 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
-            android:name="com.androlua.Welcome"
+            android:name="com.zade.androluaz.Welcome"
             android:exported="true"
             android:theme="@style/Theme.AndroLuaX.Material3.Welcome"
             android:windowSoftInputMode="adjustResize|stateHidden">
