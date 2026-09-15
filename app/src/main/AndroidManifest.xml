@@ -182,7 +182,7 @@
         android:name="com.androlua.LuaApplication"
         android:allowBackup="true"
         android:icon="@drawable/icon"
-        android:label="AndroLuaX"
+        android:label="AndroLuaZ+"
         android:largeHeap="true"
         android:persistent="true"
         android:requestLegacyExternalStorage="true"
@@ -210,6 +210,7 @@
 
         <activity
             android:name="com.androlua.Main"
+            android:exported="true"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:launchMode="singleTask"
@@ -314,7 +315,7 @@
             android:name="com.androlua.LuaAccessibilityService"
             android:enabled="true"
             android:exported="true"
-            android:label="AndroLuaX"
+            android:label="AndroLuaZ+"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
 
             <meta-data

@@ -5,28 +5,28 @@ plugins {
 android {
     signingConfigs {
         debug {
-            storeFile file('F:\\my\\programming\\Android\\签名\\Jesse205.keystore')
-            keyAlias 'Jesse205 App 证书'
-            storePassword 'Jesse205'
-            keyPassword 'Jesse205'
+            storeFile file('keystore/debug.keystore')
+            keyAlias 'androiddebugkey'
+            storePassword 'android'
+            keyPassword 'android'
         }
         release {
-            storeFile file('F:\\my\\programming\\Android\\签名\\Jesse205.keystore')
-            storePassword 'Jesse205'
-            keyPassword 'Jesse205'
-            keyAlias 'Jesse205 App 证书'
+            storeFile file('keystore/debug.keystore')
+            storePassword 'android'
+            keyPassword 'android'
+            keyAlias 'androiddebugkey'
         }
     }
     compileSdk 34
-    namespace 'com.jesse205.androlua.androidX.material3'
+    namespace 'com.zade.androluaz'
 
     defaultConfig {
-        applicationId "com.jesse205.androlua.androidX.material3"
+        applicationId "com.zade.androluaz"
         minSdkVersion 21
         // noinspection ExpiredTargetSdkVersion
         targetSdkVersion 29 // 新版本不会自动授予完整的存储权限
         versionCode 3499
-        versionName "3.4(5.0.18)(Material3)"
+        versionName "3.5(5.0.18)(Material3)-AndroLuaZ+"
         signingConfig signingConfigs.release
         multiDexEnabled true
     }
