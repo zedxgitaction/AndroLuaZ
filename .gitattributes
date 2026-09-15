@@ -1,0 +1,12 @@
+# Binary files
+*.jar binary
+*.so binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.class binary
+*.apk binary
+*.aar binary
+*.dex binary
