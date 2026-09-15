@@ -19,7 +19,7 @@ public class Welcome extends com.androlua.Welcome {
     private static final String TAG = "Welcome";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         // Copy critical assets BEFORE super.onCreate which may trigger the UpdateTask
         copyAssetsIfNeeded();
         super.onCreate(savedInstanceState);
