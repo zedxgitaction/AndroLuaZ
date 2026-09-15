@@ -145,7 +145,7 @@ local function env_import(env)
   append(packages, '')
   append(packages, 'java.lang.')
   append(packages, 'java.util.')
-  append(packages, 'com.jesse205.androlua.androidX.material3.')
+  append(packages, 'com.zade.androluaz.')
   append(packages, 'com.androlua.')
 
   local function import_1(classname)
@@ -207,7 +207,7 @@ local function env_import(env)
   import("loadlayout", _env)
   import("loadbitmap", _env)
   import("loadmenu", _env)
-  _env.R=luajava.bindClass "com.jesse205.androlua.androidX.material3.R"
+  _env.R=luajava.bindClass "com.zade.androluaz.R"
   return _env
 end
 
