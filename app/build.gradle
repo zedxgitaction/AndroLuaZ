@@ -3,20 +3,6 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        debug {
-            storeFile file('keystore/debug.keystore')
-            keyAlias 'androiddebugkey'
-            storePassword 'android'
-            keyPassword 'android'
-        }
-        release {
-            storeFile file('keystore/debug.keystore')
-            storePassword 'android'
-            keyPassword 'android'
-            keyAlias 'androiddebugkey'
-        }
-    }
     compileSdk 34
     namespace 'com.zade.androluaz'
 
@@ -27,7 +13,6 @@ android {
         targetSdkVersion 29 // 新版本不会自动授予完整的存储权限
         versionCode 3499
         versionName "3.5(5.0.18)(Material3)-AndroLuaZ+"
-        signingConfig signingConfigs.release
         multiDexEnabled true
     }
 
@@ -37,7 +22,6 @@ android {
             shrinkResources false
             // noinspection ChromeOsAbiSupport
             ndk { abiFilters 'armeabi-v7a', 'arm64-v8a' }
-            signingConfig signingConfigs.release
             minifyEnabled false
         }
         debug {
